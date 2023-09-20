@@ -2,13 +2,13 @@ import os
 import shutil
 
 def to_working(extension=".tar.gz"):
-    source_folder = os.getcwd()  # Get the current working directory
+    source_folder = os.getcwd()  # Get the current incoming directory path
     destination_folder = source_folder.replace("incoming", "working")
     # Check if the destination folder exists, and create it if not
     if not os.path.exists(destination_folder):
         os.makedirs(destination_folder)
 
-    # Iterate over files in the source folder
+    # Iterate over files in the source folder (incoming directory)
     for filename in os.listdir(source_folder):
         source_path = os.path.join(source_folder, filename)
         if filename.endswith(extension):
